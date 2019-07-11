@@ -2,15 +2,20 @@
   text-align: center;
 }
 
+input {
+  margin-left: 10px;
+}
+
 #dungeonStats {
   width: 18%;
   text-align: right;
+  display: inline-block;
 }
 
 .Main {
   padding: 20;
-  display: inline;
-  width: 40%;
+  display: inline-block;
+  width: 70%;
 }
 
 svg {

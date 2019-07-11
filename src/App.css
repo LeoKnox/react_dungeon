@@ -3,8 +3,20 @@
 }
 
 #dungeonStats {
-  text-align: right;
   width: 18%;
+  text-align: right;
+}
+
+.Main {
+  padding: 20;
+  display: inline;
+  width: 40%;
+}
+
+svg {
+  fill:blue;
+  stroke-width:15;
+  stroke: black;
 }
 
 .App-logo {

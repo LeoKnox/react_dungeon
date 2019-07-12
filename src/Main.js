@@ -1,9 +1,9 @@
 import React from "react";
 
-function Main(myName) {
+function Main(props) {
     return (
         <div className="Main">
-            <h1>{myName.myName.name}</h1>
+            <p className="roomName">Room name: {props.myName.name}</p>
             <svg width="90%" height="80%">
                 <rect width="300" height="100" />
             </svg>

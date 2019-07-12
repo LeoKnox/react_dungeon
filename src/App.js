@@ -5,15 +5,18 @@ import Side from './Side';
 import Main from './Main';
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = { name: "dungeon"}
+  constructor(props) {
+    super(props)
+    this.state = {name: ""}
   }
 
-  onValueChange(newValues) {
+  /*onValueChange(newValues) {
     this.setState({
       name: newValues
     })
+  }*/
+  onValueChange = (newValues) => {
+    this.setState({name:newValues});
   }
 
 render() {

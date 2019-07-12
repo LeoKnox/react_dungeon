@@ -11,16 +11,10 @@ class Side extends Component {
         this.readValue = this.readValue.bind(this);
     }
 
-    onChangeValue() {
+    onChangeValue(e) {
+        e.preventDefault();
         this.props.changeValue(this.state.roomName)
-        //event.preventDefault();
     }
-    /*onChangeValue(prevProps) {
-        if(!equal(this.props.user, prevProps.user))
-        {
-            this.props.changeValue(this.state.roomName)
-        }
-    }*/
 
     readValue(event) {
         const {name, value} = event.target;

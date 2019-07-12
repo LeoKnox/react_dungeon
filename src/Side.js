@@ -11,6 +11,17 @@ class Side extends Component {
         this.readValue = this.readValue.bind(this);
     }
 
+    onChangeValue() {
+        this.props.changeValue(this.state.roomName)
+        //event.preventDefault();
+    }
+    /*onChangeValue(prevProps) {
+        if(!equal(this.props.user, prevProps.user))
+        {
+            this.props.changeValue(this.state.roomName)
+        }
+    }*/
+
     readValue(event) {
         const {name, value} = event.target;
         this.setState({
@@ -44,7 +55,7 @@ class Side extends Component {
                 <p>Doors:
                     <input type="text" />
                 </p>
-                <button>Update</button>
+                <button onClick={this.onChangeValue.bind(this)}>Update</button>
                 <h1>{this.state.roomName}</h1>
             </form>
         )

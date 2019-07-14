@@ -26,7 +26,6 @@ render() {
       <Head />
       <Side changeValue={this.onValueChange.bind(this)}/>
       <Main myName = { this.state } />
-      <p>hello: {this.state.width}</p>
     </div>
     )
   }

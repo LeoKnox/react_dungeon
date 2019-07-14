@@ -37,7 +37,6 @@ class Side extends Component {
                 <p>Width:
                     <input
                         type="text"
-                        placeholder="5"
                         value={this.state.width}
                         name="width"
                         onChange={this.readValue}
@@ -46,7 +45,6 @@ class Side extends Component {
                 <p>Height:
                     <input
                         type="text"
-                        placeholder="3"
                         value={this.state.height}
                         name="height"
                         onChange={this.readValue}
@@ -56,8 +54,6 @@ class Side extends Component {
                     <input type="text" />
                 </p>
                 <button onClick={this.onChangeValue.bind(this)}>Update</button>
-                <h1>{this.state.roomName}</h1>
-                <h1>{this.state.width}</h1>
             </form>
         )
     }

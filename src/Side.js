@@ -16,6 +16,13 @@ class Side extends Component {
         this.props.changeValue(this.state);
     }
 
+    createDoor() {
+        let newDoor = document.createElement("LI");
+        let doorNode = document.createTextNode("hello");
+        newDoor.appendChild(doorNode);
+        document.getElementById("doors").appendChild(newDoor); 
+    }
+
     readValue(event) {
         const {name, value} = event.target;
         this.setState({
@@ -51,8 +58,14 @@ class Side extends Component {
                     />
                 </p>
                 <p>Doors:
-                    <input type="text" />
+                    <input
+                        type="number"
+                        placeholder="0"
+                        min="0"
+                        onClick={this.createDoor}
+                    />
                 </p>
+                <ul id="doors"></ul>
                 <button onClick={this.onChangeValue.bind(this)}>Update</button>
             </form>
         )

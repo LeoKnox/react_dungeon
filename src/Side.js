@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Door from "./Door";
 
 class Side extends Component {
     constructor() {
@@ -7,8 +8,11 @@ class Side extends Component {
             roomName: "",
             width: "",
             height: "",
+            doorNum: 0,
+            doors: []
         }
         this.readValue = this.readValue.bind(this);
+        this.createDoor = this.createDoor.bind(this);
     }
 
     onChangeValue(e) {
@@ -17,10 +21,14 @@ class Side extends Component {
     }
 
     createDoor() {
-        let newDoor = document.createElement("LI");
-        let doorNode = document.createTextNode("hello");
-        newDoor.appendChild(doorNode);
-        document.getElementById("doors").appendChild(newDoor); 
+        this.setState(prevState => {
+            console.log(prevState.doors);
+            prevState.doors.push(<li>hi</li>);
+            return {
+                doorNum: prevState.doorNum + 1,
+                doors: prevState.doors
+            }
+        })
     }
 
     readValue(event) {
@@ -65,7 +73,14 @@ class Side extends Component {
                         onClick={this.createDoor}
                     />
                 </p>
-                <ul id="doors"></ul>
+                <ul id="doors">
+                    {this.state.doors.map((number) =>
+                            <ListItem key={number.toString()}
+                                value={number}
+                            />
+                        )}
+                </ul>
+                    <p>{this.state.doors}</p>
                 <button onClick={this.onChangeValue.bind(this)}>Update</button>
             </form>
         )

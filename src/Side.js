@@ -20,10 +20,14 @@ class Side extends Component {
         this.props.changeValue(this.state);
     }
 
+    thisDoor = () => {
+        console.log('today');
+    }
+
     createDoor() {
         this.setState(prevState => {
             console.log(prevState.doors);
-            prevState.doors.push(<li>hi</li>);
+            prevState.doors.push(<Door changeValue={this.thisDoor.bind(this)} />);
             return {
                 doorNum: prevState.doorNum + 1,
                 doors: prevState.doors
@@ -73,13 +77,8 @@ class Side extends Component {
                         onClick={this.createDoor}
                     />
                 </p>
-                <ul id="doors">
-                    {this.state.doors.map((number) =>
-                            <ListItem key={number.toString()}
-                                value={number}
-                            />
-                        )}
-                </ul>
+                <div id="doors">
+                </div>
                     <p>{this.state.doors}</p>
                 <button onClick={this.onChangeValue.bind(this)}>Update</button>
             </form>

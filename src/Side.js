@@ -20,14 +20,14 @@ class Side extends Component {
         this.props.changeValue(this.state);
     }
 
-    thisDoor = () => {
+    thisDoor = (addedDoor) => {
         console.log('today');
     }
 
     createDoor() {
         this.setState(prevState => {
             console.log(prevState.doors);
-            prevState.doors.push(<Door changeValue={this.thisDoor.bind(this)} />);
+            prevState.doors.push(<Door newDoor={this.state} changeValue={this.thisDoor.bind(this)} />);
             return {
                 doorNum: prevState.doorNum + 1,
                 doors: prevState.doors
@@ -72,14 +72,14 @@ class Side extends Component {
                 <p>Doors:
                     <input
                         type="number"
-                        placeholder="0"
+                        value={this.state.doors.length}
                         min="0"
                         onClick={this.createDoor}
                     />
                 </p>
                 <div id="doors">
+                    {this.state.doors}
                 </div>
-                    <p>{this.state.doors}</p>
                 <button onClick={this.onChangeValue.bind(this)}>Update</button>
             </form>
         )

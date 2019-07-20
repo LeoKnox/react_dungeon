@@ -1,6 +1,12 @@
 import React, {Component} from "react"
 
 class Door extends Component {
+    constructor() {
+        super() 
+            this.state = {
+                doors: []
+            }
+    }
 
     thisDoor = (e) => {
         e.preventDefault();
@@ -8,8 +14,11 @@ class Door extends Component {
     }
 
     render(props) {
+        console.log('t'+ props);
         return (
-            <input type="submit" value="add" id={props} onClick={this.thisDoor.bind(this)} />
+            <div id={props}>
+                <input type="text" id={props} onClick={this.thisDoor.bind(this)} ></input>
+            </div>
         )
     }
 }

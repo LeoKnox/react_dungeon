@@ -25,9 +25,10 @@ class Side extends Component {
     }
 
     createDoor() {
+        let transferDoors = {door: "hello"};
         this.setState(prevState => {
             console.log(prevState.doors);
-            prevState.doors.push(<Door newDoor={this.state} changeValue={this.thisDoor.bind(this)} />);
+            prevState.doors.push(<Door newDoor={transferDoors} changeValue={this.thisDoor.bind(this)} />);
             return {
                 doorNum: prevState.doorNum + 1,
                 doors: prevState.doors

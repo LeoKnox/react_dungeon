@@ -1,34 +1,21 @@
-import React, {Component} from 'react';
-import './App.css';
-import Head from './Head';
-import Side from './Side';
-import Main from './Main';
+import React, {Component} from 'react'
+import './App.css'
+import Menu from './Menu'
+import Home from './Home'
+import Second from './Second'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      newValues: {
-        roomName: "",
-        width: "",
-        height: ""
-      }
-    }
+  setSecond  = () => {
+    console.log('friend')
   }
-
-  onValueChange = (newValues) => {
-    this.setState({newValues});
-  }
-
-render() {
-  return (
-    <div className="App">
-      <Head />
-      <Side changeValue={this.onValueChange.bind(this)}/>
-      <Main myName = { this.state } />
-    </div>
+  render() {
+    return (
+      <div id="app">
+        <Menu  />
+        <Home page="<First />" />
+      </div>
     )
   }
 }
 
-export default App;
+export default {App, setSecond}

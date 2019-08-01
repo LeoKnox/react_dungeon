@@ -2,35 +2,10 @@
   text-align: center;
 }
 
-input {
-  margin-left: 10px;
-}
-
-.roomName {
-  padding-left: 8%;
-  padding-top: 1%;
-  text-align: left;
-  font-size: 2em;
-}
-
-#dungeonStats {
-  width: 18%;
-  padding-top: 10%;
-  text-align: right;
-  display: inline-block;
-}
-
-.Main {
-  padding: 20;
-  display: inline-block;
-  width: 70%;
-  height: 600px;
-}
-
-svg {
-  fill:blue;
-  stroke-width:15;
-  stroke: black;
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .App-header {
@@ -46,4 +21,13 @@ svg {
 
 .App-link {
   color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,21 +1,36 @@
-import React, {Component} from 'react'
-import './App.css'
-import Menu from './Menu'
-import Home from './Home'
-import Second from './Second'
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import './App.css';
+import AboutPage from './pages/AboutPage';
+import CharactersListPage from './pages/CharactersListPage';
+import CharacterPage from './pages/CharacterPage';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
+import NavBar from './NavBar';
 
 class App extends Component {
-  setSecond  = () => {
-    console.log('friend')
-  }
   render() {
     return (
-      <div id="app">
-        <Menu  />
-        <Home page="<First />" />
-      </div>
-    )
+      <Router>
+        <div className="App">
+          <NavBar />
+          <div id="page-body">
+            <Switch>
+              <Route path="/" component={HomePage} exact />
+              <Route path="/about" component={AboutPage} />
+              <Route path="/characters-list" component={CharactersListPage} />
+              <Route path="/character/:name" component={CharacterPage} />
+              <Route component={NotFoundPage} />
+            </Switch>
+          </div>
+        </div>
+      </Router>
+    );
   }
 }
 
-export default {App, setSecond}
+export default App;
